@@ -1,4 +1,4 @@
 function showMessage()
 {
-    alert("Website Successfully Deployed Using Jenkins CI/CD 🚀");
+    alert("Website Successfully Deployed Using Jenkins CI/CD ");
 }
