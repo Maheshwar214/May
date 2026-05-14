@@ -10,7 +10,7 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Build Image') {
             steps {
                 sh 'docker build --no-cache -t sample-image .'
             }
