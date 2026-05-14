@@ -12,16 +12,16 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t Sample-image .'
+                sh 'docker build -t sample-image .'
             }
         }
 
         stage('Run Docker Container') {
             steps {
                 sh '''
-                docker stop Sample || true
-                docker rm Sample || true
-                docker run -d -p 80:80 --name Sample Sample-image
+                docker stop sample || true
+                docker rm sample || true
+                docker run -d -p 80:80 --name sample sample-image
                 '''
             }
         }
