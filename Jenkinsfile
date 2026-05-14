@@ -18,14 +18,24 @@ pipeline {
 
         stage('Stop Old Container') {
             steps {
-                sh 'docker stop sample || true'
-                sh 'docker rm sample || true'
+                sh '''
+                docker stop sample || true
+                docker rm sample || true
+                '''
             }
         }
 
         stage('Run New Container') {
             steps {
-                sh 'docker run -d -p 80:80 --name sample sample-image'
+                sh '''
+                docker run -d -p 9090:80 --name sample sample-image
+                '''
+            }
+        }
+
+        stage('Clean Unused Images') {
+            steps {
+                sh 'docker image prune -f'
             }
         }
     }
