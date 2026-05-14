@@ -6,17 +6,22 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 git branch: 'main',
-                url: 'https://github.com/Maheshwar214/May.git',
-                credentialsId: 'github-token'
+                url: 'https://github.com/Maheshwar214/May.git'
             }
         }
 
-        stage('Deploy Website') {
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t Sample-image .'
+            }
+        }
+
+        stage('Run Docker Container') {
             steps {
                 sh '''
-                sudo rm -rf /usr/share/nginx/html/*
-                sudo cp -r ./* /usr/share/nginx/html/
-                sudo chmod -R 755 /usr/share/nginx/html
+                docker stop Sample || true
+                docker rm Sample || true
+                docker run -d -p 80:80 --name Sample Sample-image
                 '''
             }
         }
