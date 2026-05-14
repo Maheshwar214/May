@@ -16,6 +16,18 @@ pipeline {
             }
         }
 
+        stage('Tag Docker Image') {
+            steps {
+                sh 'docker tag sample-image maheshwar2146/sample-image:latest'
+            }
+        }
+
+        stage('Push To Docker Hub') {
+            steps {
+                sh 'docker push maheshwar2146/sample-image:latest'
+            }
+        }
+
         stage('Stop Old Container') {
             steps {
                 sh '''
