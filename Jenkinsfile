@@ -16,13 +16,16 @@ pipeline {
             }
         }
 
-        stage('Run Docker Container') {
+        stage('Stop Old Container') {
             steps {
-                sh '''
-                docker stop sample || true
-                docker rm sample || true
-                docker run -d -p 80:80 --name sample sample-image
-                '''
+                sh 'docker stop sample || true'
+                sh 'docker rm sample || true'
+            }
+        }
+
+        stage('Run New Container') {
+            steps {
+                sh 'docker run -d -p 80:80 --name sample sample-image'
             }
         }
     }
