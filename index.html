@@ -1,28 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jenkins CI/CD Project</title>
-
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopEase</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <div class="container">
-        <h1>Jenkins CI/CD Deployment</h1>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">ShopEase</div>
 
-        <p>
-            This website is deployed automatically using
-            GitHub + Jenkins + Nginx on AWS EC2.
-        </p>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Offers</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
 
-        <button onclick="showMessage()">
-            Click Me
-        </button>
-    </div>
+            <div class="cart">
+                🛒 Cart: <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Latest Fashion Collection</h1>
+            <p>Discover amazing products at the best prices.</p>
+            <button>Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products">
+        <h2>Featured Products</h2>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500" alt="T-Shirt">
+                <h3>Casual T-Shirt</h3>
+                <p>₹799</p>
+                <button class="add-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Shoes">
+                <h3>Running Shoes</h3>
+                <p>₹2499</p>
+                <button class="add-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=500" alt="Watch">
+                <h3>Smart Watch</h3>
+                <p>₹3999</p>
+                <button class="add-cart">Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 ShopEase. All Rights Reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
-
 </body>
 </html>
