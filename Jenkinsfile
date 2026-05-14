@@ -10,7 +10,7 @@ pipeline {
             }
         }
 
-        stage('Build Image') {
+        stage('Build Docker Image') {
             steps {
                 sh 'docker build --no-cache -t sample-image .'
             }
@@ -35,7 +35,7 @@ pipeline {
 
         stage('Clean Unused Images') {
             steps {
-                sh 'docker image prune -f'
+                sh 'docker image prune -af'
             }
         }
     }
