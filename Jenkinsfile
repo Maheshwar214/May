@@ -16,11 +16,10 @@ pipeline {
             }
         }
 
-        stage('Stop Old Container') {
+        stage('Remove Old Container') {
             steps {
                 sh '''
-                docker stop sample || true
-                docker rm sample || true
+                docker rm -f sample || true
                 '''
             }
         }
