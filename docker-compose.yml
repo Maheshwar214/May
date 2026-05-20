@@ -12,10 +12,3 @@ services:
     ports:
       - "3000:80"
     restart: unless-stopped
-
-  front:
-    image: eclipse-temurin:17
-    container_name: java_container
-    ports:
-      - "9092:80"
-    restart: unless-stopped
