@@ -7,7 +7,6 @@ services:
     container_name: Temp
     ports:
       - "9090:80"
-
     restart: unless-stopped
 
   virat-app:
@@ -15,5 +14,11 @@ services:
     container_name: virat_kohli
     ports:
       - "9091:80"
+    restart: unless-stopped
 
+  web:
+    image: nginx
+    container_name: temp_cont
+    ports:
+      - "3000:80"
     restart: unless-stopped
