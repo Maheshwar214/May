@@ -1,7 +1,7 @@
 services:
   temp-app:
     image: sample-image
-    container_name: Temp
+    container_name: temp
     ports:
       - "9090:80"
     restart: unless-stopped
