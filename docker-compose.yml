@@ -16,9 +16,9 @@ services:
       - "9091:80"
     restart: unless-stopped
 
-  web:
+  web-app:
     image: nginx
-    container_name: temp_cont
+    container_name: stupid
     ports:
       - "3000:80"
     restart: unless-stopped
