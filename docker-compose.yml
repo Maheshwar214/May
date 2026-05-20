@@ -9,7 +9,7 @@ services:
     restart: unless-stopped
 
   virat-app:
-    image: Best
+    image: best
     container_name: virat_kohli
     ports:
       - "9091:80"
