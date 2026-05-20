@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+  temp-app:
+    image: sample-image
+    container_name: Temp
+    ports:
+      - "9090:80"
+
+    restart: unless-stopped
+
+  virat-app:
+    image: rcb
+    container_name: virat_kohli
+    ports:
+      - "9091:80"
+
+    restart: unless-stopped
