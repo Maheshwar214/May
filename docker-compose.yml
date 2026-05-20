@@ -6,14 +6,6 @@ services:
       - "9090:80"
     restart: unless-stopped
 
-  virat-app:
-    image: ubuntu
-    container_name: virat_kohli
-    command: tail -f /dev/null
-    ports:
-      - "9091:80"
-    restart: unless-stopped
-
   web:
     image: nginx
     container_name: temp_cont
