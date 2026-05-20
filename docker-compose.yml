@@ -12,3 +12,10 @@ services:
     ports:
       - "3000:80"
     restart: unless-stopped
+
+  web:
+    image: java
+    container_name: java_container
+    ports:
+      - "9092:80"
+    restart: unless-stopped
