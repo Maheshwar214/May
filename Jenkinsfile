@@ -24,13 +24,14 @@ pipeline {
             }
         }
 
-        stage('Run New Container') {
-            steps {
-                sh '''
-                docker run -d -p 9090:80 --name sample sample-image
-                '''
-            }
-        }
+        stage('Run Containers') {
+    steps {
+        sh '''
+        docker compose down
+        docker compose up -d --build
+        '''
+    }
+}
 
         stage('Clean Unused Images') {
             steps {
