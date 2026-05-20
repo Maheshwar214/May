@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   temp-app:
     image: sample-image
@@ -11,6 +9,7 @@ services:
   virat-app:
     image: ubuntu
     container_name: virat_kohli
+    command: tail -f /dev/null
     ports:
       - "9091:80"
     restart: unless-stopped
