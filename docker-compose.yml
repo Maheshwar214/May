@@ -14,7 +14,7 @@ services:
     restart: unless-stopped
 
   front:
-    image: java
+    image: openjdk:17
     container_name: java_container
     ports:
       - "9092:80"
